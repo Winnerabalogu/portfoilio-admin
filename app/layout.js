@@ -3,6 +3,7 @@ import '../styles/animate.css'
 import '../styles/flaticon.css'
 import "../styles/font-awesome.min.css";
 import "../styles/themify-icons.css";
+import "../styles/global.css"
 import '../styles/sass/style.scss'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -22,7 +23,7 @@ export default function RootLayout({ children }) {
         </head>
 
         <body>
-        <div id="__next">
+        <div >
         {children}
         </div>
         </body>

@@ -967,16 +967,16 @@
 	/* navigation open and close btn hide for width screen */
 	@include widther(992px) {
 		.navbar-header .open-btn {
-			display: none;
+			display: block;
 		}
 
 		#navbar .close-navbar {
-			display: none;
+			display: block;
 		}
 	}
 
 	.menu-close {
-		display: none;
+		display: block;
 	}
 
 
@@ -1369,12 +1369,12 @@
 }
 
 .mobileMenu{
-    display: none;
+    display: block;
 }
 .showmenu{
-    display: none;
+    display: block;
 }
-@media (max-width:992px){
+@media (max-width:1992px){
     .showmenu {
         display: block;
         width: 40px;

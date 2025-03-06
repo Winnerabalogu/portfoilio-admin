@@ -1,38 +1,58 @@
-import React from 'react'
-import Link from 'next/link'
-import Logo from '../../public/images/foot-logo.png'
-import Image from 'next/image'
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "../../public/images/foot-logo.png"; // Update with actual logo path
 
-const Footer = (props) => {
-    return (
-        <div className="tp-site-footer text-center">
-            <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <div className="footer-image">
-                            <Link className="logo" href="/"><Image src={Logo} alt="" /></Link>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <div className="link-widget">
-                            <ul>
-                                <li><Link href="https://web.facebook.com/xstonnershub"><i className="ti-facebook"></i></Link></li>
-                                <li><Link href="https://x.com/WealthPrim82754"><i className="ti-twitter-alt"></i></Link></li>
-                                <li><Link href="https://www.linkedin.com/in/abalogu-winner/"><i className="ti-linkedin"></i></Link></li>
-                                <li><Link href="https://www.instagram.com/nerdwave.io/"><i className="ti-instagram"></i></Link></li>
-                                
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-12">
-                        <div className="copyright">
-                            <p>© 2025. All rights reserved by Abalogu.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+const Footer = () => {
+  return (
+    <footer className="site-footer">
+      <div className="container">
+        {/* Logo */}
+        <div className="footer-logo">
+          <Link href="/">
+            <Image src={Logo} alt="Company Logo" width={150} height={50} />
+          </Link>
         </div>
-    )
-}
+
+        {/* Social Media Links */}
+        <nav className="footer-social">
+          <ul>
+            <li>
+              <Link href="https://facebook.com" target="_blank" aria-label="Facebook">
+                <i className="ti-facebook"></i>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://twitter.com" target="_blank" aria-label="Twitter">
+                <i className="ti-twitter-alt"></i>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+                <i className="ti-linkedin"></i>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://pinterest.com" target="_blank" aria-label="Pinterest">
+                <i className="ti-pinterest"></i>
+              </Link>
+            </li>
+            <li>
+              <Link href="https://vimeo.com" target="_blank" aria-label="Vimeo">
+                <i className="ti-vimeo-alt"></i>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Copyright */}
+        <div className="footer-copyright">
+          <p>© {new Date().getFullYear()}. All rights reserved by Abalogu.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;

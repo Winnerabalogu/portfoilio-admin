@@ -1,0 +1,248 @@
+
+.app-container{
+    display:flex;
+    flex-direction: column;
+  }
+  
+  .navbar {
+      position: fixed; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background-color: rgb(7, 6, 6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+  }
+  
+  .logo-container {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+  }
+  
+  .menu-toggle {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+  }
+  
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: rgb(7, 6, 6);
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+      transition: left 0.3s ease-in-out;
+      padding: 20px;
+  }
+  
+  .navbar .sidebar.open {
+      left: 0; 
+  }
+  
+  .sidebar ul {
+      list-style: none;
+      padding: 0;
+  }
+  
+  .sidebar ul li {
+      padding: 10px 0;
+  }
+  
+  .sidebar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 18px;
+  }
+  
+  /* global.css */
+
+.logout-button {
+    background-color: #f44336; /* Red color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logout-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+  }
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+    background-color: #14161a;
+}
+
+.login-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; 
+    text-align: center; 
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; 
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.theme-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.theme-btn:hover {
+    background-color: #0056b3;
+}
+
+.theme-btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.errorMessage {
+    color: red;
+    margin-bottom: 10px;
+}
+
+#loader {
+    margin-top: 10px;
+}
+
+.table-container {
+    position: relative; 
+    top: 100;
+    left: 0;
+    width: 100%;
+    transition: width 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+    margin-top: 10px;
+    margin-left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.navbar .sidebar.open ~ .table-container {
+  margin-left: 250px !important;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #111;
+}
+td{
+    border: 1px solid white;
+}
+th {
+    background: white;
+    color: #111;
+}
+
+button {
+    margin: 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.expanded-row td {
+    background: #f9f9f9;
+    font-weight: bold;
+    text-align: left;
+    padding: 15px;
+}
+
+/* Footer Style */
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-logo {
+    margin-bottom: 10px;
+}
+
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-social ul li {
+    display: inline-block;
+}
+
+.footer-social ul li a {
+    color: white;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-social ul li a:hover {
+    color: #f39c12;
+}
+
+.footer-copyright {
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0.8;
+}

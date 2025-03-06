@@ -1208,7 +1208,7 @@ img {
 
 @media screen and (min-width: 992px) {
   .tp-site-header #navbar li {
-    position: relative;
+    position: relative;3
   }
   .tp-site-header #navbar > .mobail-menu-inner ul > li > a:before {
     position: absolute;
