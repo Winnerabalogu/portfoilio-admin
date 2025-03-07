@@ -1,8 +1,8 @@
 "use client"
 import React, { Fragment } from 'react';
-import Navbar from '../components/Navbar/Navbar';
+import Navbar from '../components/LoginNav/LoginNav';
 import Footer from '../components/footer/Footer';
-import Login from '../components/Login/Login';
+import SignUp from '../components/SignUp/SignUp';
 
 
 
@@ -10,7 +10,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <Navbar/>
-      <Login/>
+      <SignUp/>
       <Footer/>
     </Fragment>
   );

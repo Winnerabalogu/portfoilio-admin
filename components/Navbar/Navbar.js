@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     console.log("Logging out");
-    router.push('/');  // Redirect to the login page
+    router.push('/Login');
   };
 
   return (

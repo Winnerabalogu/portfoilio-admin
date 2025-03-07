@@ -87,8 +87,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; 
-    background-color: #14161a;
+    min-height: 100vh; 
+    background-color: #08080a;
 }
 
 .login-box {
@@ -206,43 +206,19 @@ button:hover {
 /* Footer Style */
 .site-footer {
     position: fixed;
-    bottom: 0;
+    bottom: -10;
     left: 0;
     width: 100%;
-    background-color: #111;
+    background-color: rgb(7, 6, 6);
     color: white;
     text-align: center;
-    padding: 20px 0;
 }
 
 .footer-logo {
-    margin-bottom: 10px;
-}
-
-.footer-social ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-}
-
-.footer-social ul li {
-    display: inline-block;
-}
-
-.footer-social ul li a {
-    color: white;
-    font-size: 20px;
-    transition: color 0.3s ease;
-}
-
-.footer-social ul li a:hover {
-    color: #f39c12;
+    margin-bottom: -25px;
 }
 
 .footer-copyright {
-    margin-top: 10px;
     font-size: 14px;
     opacity: 0.8;
 }

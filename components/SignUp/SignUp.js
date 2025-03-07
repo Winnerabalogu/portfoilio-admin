@@ -4,14 +4,16 @@ import { useRouter } from 'next/navigation';
 import SimpleReactValidator from 'simple-react-validator';
 import Link from 'next/link';
 
-const Login = () => {
+const SignUp = () => {
     const [forms, setForms] = useState({
         username: '',
+        email: '',
+        phone: '',
         password: ''
     });
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
-    const [loginError, setLoginError] = useState('');
+    const [SignUpError, setSignUpError] = useState('');
 
     const validator = useRef(new SimpleReactValidator({
         className: 'errorMessage'
@@ -27,7 +29,7 @@ const Login = () => {
         if (validator.allValid()) {
             validator.hideMessages();
             setIsLoading(true);
-            setLoginError('');
+            setSignUpError('');
 
             try {
                 //  Replace authenticateUser with your actual authentication logic
@@ -38,19 +40,21 @@ const Login = () => {
 
                 if (response.success) {
                     // Handle successful login (e.g., redirect, store token)
-                    console.log('Login successful!');
-                    router.push('/comment'); // Redirect to comment page
+                    console.log('Registration successful!');
+                    router.push('/Login'); // Redirect to comment page
                 } else {
-                    // Handle login failure
-                    setLoginError(response.message || 'Login failed. Please check your credentials.');
+                    // Handle SignUP failure
+                    setSignUpError(response.message || 'Registration failed. Please check your credentials.');
                 }
             } catch (error) {
                 console.error('Error during login:', error);
-                setLoginError('An unexpected error occurred. Please try again later.');
+                setSignUpError('An unexpected error occurred. Please try again later.');
             } finally {
                 setIsLoading(false);
                 setForms({
                     username: '',
+                    email: '',
+                    phone: '',
                     password: ''
                 });
             }
@@ -62,9 +66,9 @@ const Login = () => {
     return (
         <div className="login-container">
             <div className="login-box">
-                <h2>Login</h2>
+                <h2>Register</h2>
                 <form method="post" className="contact-validation-active" onSubmit={submitHandler}>
-                    {loginError && <div className="errorMessage">{loginError}</div>}
+                    {SignUpError && <div className="errorMessage">{SignUpError}</div>}
 
                     <div className="form-group">
                         <label htmlFor="username">Username*</label>
@@ -78,7 +82,35 @@ const Login = () => {
                             placeholder="Your Username"
                             required
                         />
-                        {validator.message('username', forms.username, 'required|alpha_num')}
+                        {validator.message('email', forms.email, 'required|alpha_num')}
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="email">email*</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={forms.email}
+                            onChange={changeHandler}
+                            className="form-control"
+                            placeholder="Your Email"
+                            required
+                        />
+                        {validator.message('email', forms.email, 'required|alpha_num')}
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="phone">Phonenumber*</label>
+                        <input
+                            type="number"
+                            id="number"
+                            name="phone"
+                            value={forms.phone}
+                            onChange={changeHandler}
+                            className="form-control"
+                            placeholder="Your Phone Number"
+                            required
+                        />
+                        {validator.message('phone', forms.phone, 'required|numeric')}
                     </div>
 
                     <div className="form-group">
@@ -97,9 +129,9 @@ const Login = () => {
                     </div>
 
                     <button type="submit" className="theme-btn" disabled={isLoading}>
-                        {isLoading ? 'Logging in...' : 'Login'}
+                        {isLoading ? 'Registering in...' : 'Register'}
                     </button>
-                    <h2 style={{ fontSize: '15px' }}>Don't have an account? <Link href="/SignUp">SignUP</Link></h2>
+                    <h2 style={{ fontSize: '15px' }}>Have an account? <Link href="/Login">Login</Link></h2>
                     <div id="loader" style={{ display: isLoading ? 'block' : 'none' }}>
                         <i className="ti-reload"></i>
                     </div>
@@ -109,4 +141,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default SignUp;
